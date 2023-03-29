@@ -1,5 +1,24 @@
 /* you can add to or change this. */
 
+h1, #buttonsDiv{
+  margin-left: 20px;
+
+}
+
+.buttons{
+  width: 120px;
+
+}
+
+label{
+  font-family:Arial, Helvetica, sans-serif
+}
+
+#across{
+  display: flex;
+  flex-direction: row;
+}
+
 #game div {
   border: 1px solid black;
   width: 100px;
@@ -52,4 +71,8 @@
 
 .purpleOn{
   background-color: purple;
+}
+
+#scoreboard{
+  margin: 5vw;
 }

@@ -3,16 +3,15 @@
 /** Memory game: find matching pairs of cards and flip both of them. */
 
 const FOUND_MATCH_WAIT_MSECS = 1000;
-const COLORS = [
-  "red", "blue", "green", "orange", "purple",
-  "red", "blue", "green", "orange", "purple",
-];
+// const COLORS = [
+//   "red", "blue", "green", "orange", "purple",
+//   "red", "blue", "green", "orange", "purple",
+// ];
 
-const colors = shuffle(COLORS);
 
-createCards(colors);
 
 let timeout1;
+
 
 const cardObject = {
   firstCard: true,
@@ -66,6 +65,7 @@ function createCards(colors) {
     newCard.classList.add(colors[i]);
     newCard.value = `num${i}`;
     gameBoard.appendChild(newCard);
+    const cardClicked = document.addEventListener("click", handleCardClick);
   }
 }
 
@@ -195,9 +195,72 @@ function handleCardClick(evt) {
 
 }
 
-const cardClicked = document.addEventListener("click", handleCardClick);
+function startGame(){
+  console.log("start game")
+  const buttonsDiv = document.querySelector("#buttonsDiv");
+  const squaresNumForm = document.createElement("form");
+  squaresNumForm.name = "squaresNumForm"
+  const squaresNumLabel = document.createElement("label")
+  squaresNumLabel.innerHTML =
+    "<br><br>Enter the number of cards you would like to match. <br> Make sure to choose an even number: <br><br>"
+  const squaresNumTextEntry = document.createElement("input")
+  squaresNumTextEntry.type = "text";
+  squaresNumTextEntry.defaultValue = 8;
+  squaresNumTextEntry.name = "squaresNumTextEntry"
+  const squaresNumSubmit = document.createElement("input")
+  squaresNumSubmit.type = "submit";
+  squaresNumSubmit.name = " squaresNumSubmit";
+  squaresNumForm.appendChild(squaresNumLabel);
+  squaresNumForm.appendChild(squaresNumTextEntry);
+  squaresNumForm.appendChild(squaresNumSubmit);
+  buttonsDiv.appendChild(squaresNumForm);
 
-//done: "adding protection from clicking 3rd space, added protection from clicking same space twice, buttons and scoreboard in html, but not working yet"
+
+  console.log("test1")
+
+
+  function squaresSubmitted(evt){
+    // evt.preventDefault;
+    // console.dir(evt.target);
+    const numberOfCards = evt.target.value;
+    // let numberOfCards = 8;
+    console.log(numberOfCards)
+
+    const COLORS = [];
+    for (let i=0; i<numberOfCards; i++){
+
+    }
+
+
+
+    const colors = shuffle(COLORS);
+
+    createCards(colors);
+  }
+
+  console.log("test2");
+  squaresNumForm.addEventListener("submit", squaresSubmitted);
+  console.log("test3");
+}
+
+
+
+function restartGame(evt){
+
+}
+
+
+
+// const cardClicked = document.addEventListener("click", handleCardClick);
+const startButton = document.querySelector("#start");
+const startClicked = startButton.addEventListener("click", startGame);
+const restartButton = document.querySelector("#restart");
+const numSquaresSubmit = document.addEventListener("click", restartGame);
+const restartClicked = document.addEventListener("click", restartGame);
+
+
+//done: adding protection from clicking 3rd card, added protection from clicking
+//same card twice
 //todo:
   //reset button
   //start button
