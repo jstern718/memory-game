@@ -1,0 +1,90 @@
+/* you can add to or change this. */
+
+h1, #buttonsDiv{
+  margin-left: 20px;
+  color: rgb(200,100,100)
+}
+
+.buttons{
+  width: 120px;
+
+}
+
+label{
+  font-family:Arial, Helvetica, sans-serif
+}
+
+#across{
+  display: flex;
+  flex-direction: row;
+}
+
+#game div {
+  border: 1px solid black;
+  /* width: 10vw;
+  height: 10vw; */
+  margin: 20px;
+  display: inline-block;
+
+}
+
+#numsDiv{
+  margin-left: 20px;
+}
+
+.cardSquare {
+  border: 1px solid black;
+  width: 5vw;
+  height: 5vw;
+  margin: 20px;
+  display: inline-block;
+
+}
+
+#game {
+  width: 80vw;
+}
+
+/* .red{
+
+}
+
+.redOn{
+  background-color: red;
+}
+
+.blue{
+
+}
+
+.blueOn {
+  background-color: blue;
+}
+
+.green{
+
+}
+
+.greenOn{
+  background-color: green;
+}
+
+.orange{
+
+}
+
+.orangeOn{
+  background-color: orange;
+}
+
+.purple{
+
+}
+
+.purpleOn{
+  background-color: purple;
+} */
+
+#scoreboard{
+  margin: 5vw;
+}

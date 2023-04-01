@@ -72,7 +72,6 @@ function createCards(colors) {
 
 
 /** Flip a card face-up. */
-
 function flipCard(card, cardObject) {
   // ... you need to write this ...
 
@@ -139,11 +138,10 @@ function flipCard(card, cardObject) {
   }
 }
 
-/** Flip a card face-down. */
-
+/* Flip cards face-down when you have two. */
 function unFlipCard2(cardObject) {
 
-  // ... you need to write this ...
+
   // if(card1 && card2){
     console.log("flip2");
     console.log(cardObject);
@@ -154,6 +152,7 @@ function unFlipCard2(cardObject) {
 
 }
 
+/* Flip cards face-down when you have one. */
 function unFlipCard1(cardObject){
   console.log("flip1");
   console.log(cardObject);
@@ -175,15 +174,14 @@ function reset(){
 /** Handle clicking on a card: this could be first-card or second-card. */
 
 function handleCardClick(evt) {
-  // ... you need to write this ...
+
   evt.preventDefault();
   const whichCard = evt.target;
   console.log(whichCard.id);
 
 
   if (cardObject.listenerFlag === false){
-    // cardOne = cardObject.card1.id;
-    // if (cardOne !== whichCard.id)
+
       if (cardObject.firstEnd === true){
         console.log(cardObject);
         cardObject.firstCard = false;
@@ -197,11 +195,3 @@ function handleCardClick(evt) {
 
 const cardClicked = document.addEventListener("click", handleCardClick);
 
-//done: "adding protection from clicking 3rd space, added protection from clicking same space twice, buttons and scoreboard in html, but not working yet"
-//todo:
-  //reset button
-  //start button
-  //keep score (count clicks) and display
-  //save lowest scoring game
-  //choose number of cards
-  //random colors
